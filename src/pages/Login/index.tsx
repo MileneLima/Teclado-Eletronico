@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Page } from "./styles";
 import { FiDelete } from "react-icons/fi";
 import { useParams } from "react-router-dom";
+import MensagemDeRetorno from "../../components/MensagemDeRetorno";
 
 const VirtualKeyboard: React.FC = () => {
   const [password, setPassword] = useState("");
@@ -108,8 +109,8 @@ const VirtualKeyboard: React.FC = () => {
               </div>
             ))}
             <div className="contentButton">
-              <button onClick={handleDelete}>
-                <FiDelete size={30} />
+              <button onClick={handleDelete} aria-label="Apagar dígito">
+                 <FiDelete size={30} />
               </button>
             </div>
           </div>
@@ -119,18 +120,7 @@ const VirtualKeyboard: React.FC = () => {
           </div>
 
           <div className="return">
-            <p
-              style={{
-                color:
-                  messageType === "success"
-                    ? "green"
-                    : messageType === "error"
-                    ? "red"
-                    : "black",
-              }}
-            >
-              {message}
-            </p>
+            <MensagemDeRetorno tipo={messageType} mensagem={message} />
           </div>
         </div>
       </Page>
