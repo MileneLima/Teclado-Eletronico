@@ -18,7 +18,7 @@ function NotFound() {
     <>
       <Container>
         <div>
-          <h1 className="neonText">PÁGINA NÃO ENCONTRADA!</h1>
+          <h1 className="neonText">PÁGINA NÃO ENCONTRADA!!!</h1>
           <button onClick={() => navigate(``)}>Voltar</button>
         </div>
       </Container>
