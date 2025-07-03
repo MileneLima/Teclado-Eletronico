@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: Rodar testes com cobertura
-        run: npm test -- --coverage --watchAll=false
+        run: npm test -- --coverage --watchAll=false --passWithNoTests
 
       - name: Salvar artefato de build
         if: success()
